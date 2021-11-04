@@ -37,14 +37,11 @@ async function getUserData(movie) {
 
         
 
-        
-        const imgKey = "https://api.themoviedb.org/3/movie/";
-        const imgMovie = await fetch(
-            imgKey +
-            userData.results[0].id +
-            "/images?api_key=903ef257505ba6636ff7c0212d7d9f0c&language=es");
-        const imgData = await imgMovie.json();
+        const imgKey = "https://image.tmdb.org/t/p/w500/";
+        const imgData = imgKey + userData.results[0].poster_path;
         userData.imgData = imgData;
+        
+        
          
     
         
