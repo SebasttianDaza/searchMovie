@@ -55,6 +55,7 @@ main {
     box-shadow: 0 .5rem .5rem  black;
     display: block;
     margin: auto;
+    cursor: pointer;
 }
 
 .resultado h1 {

@@ -1,3 +1,4 @@
+
 //*Obtener el formulario, barra de busquedad y el boton
 
 const form = document.getElementById('form');
@@ -27,6 +28,7 @@ async function getUserData(movie) {
     
 
     try {
+        //*Obtener datos de la API
         const userRequest = await fetch(API_KEY + movie);
         const userData = await userRequest.json();
 
@@ -36,11 +38,21 @@ async function getUserData(movie) {
         }
 
         
-
+        //*Obtener poster de pelicula
         const imgKey = "https://image.tmdb.org/t/p/w500/";
         const imgData = imgKey + userData.results[0].poster_path;
         userData.imgData = imgData;
-        
+
+        //*Obtener poster de pelicula para los otros resultados
+        const imgData1 = imgKey + userData.results[1].poster_path;
+        userData.imgData1 = imgData1;
+
+        const imgData2 = imgKey + userData.results[2].poster_path;
+        userData.imgData2 = imgData2;
+
+        const imgData3 = imgKey + userData.results[3].poster_path;
+        userData.imgData3 = imgData3;
+
         
          
     
@@ -80,9 +92,9 @@ function showUserData(userData) {
             </section>
             <div class="otrosResultado">
                 <p>Otros resultados</p>
-                <img src="img/imagen.jpg" alt="">
-                <img src="img/imagen.jpg" alt="">
-                <img src="img/imagen.jpg" alt="">
+                <img onclick='newRequest()' src="${userData.imgData1}" alt="">
+                <img onclick='newRequest()' src="${userData.imgData2}" alt="">
+                <img onclick='newRequest()' src="${userData.imgData3}" alt="">
             </div>
     `;
 
@@ -93,3 +105,10 @@ function showUserData(userData) {
 //*Funcion de Errores
 
 function showError(error) {}
+
+//*Funcion de los demas resultados
+
+const newRequest = () => {
+    location.href = "Paginas/resultado.html";
+    nuevasData();
+}
