@@ -108,8 +108,9 @@ function showError(error) {}
 
 //*Funcion de los demas resultados
 
-function newRequest(){
+function newRequest() {
     location.href = "Paginas/resultado.html";
+    features();
 }
 
 
