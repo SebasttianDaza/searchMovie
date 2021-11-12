@@ -5,9 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultado 1</title>
-    <script defer src="Funciones/app.js" type='module' ></script>
+    <link rel="stylesheet" href="estilos.css">
+    <script defer src="Funciones/app.js" type='module'></script>
 </head>
 <body>
-    <h1>Hola al Resultado 1</h1>
+    <main>
+        <!-- *Menu de Busquedad -->
+        <section class="search">
+            <form id="forma">
+                <input type="button" value="Volver" id="btnVolver" class="search">
+            </form>
+        </section>
+        <br>
+        <!-- *Menu de Resultado -->
+        <article id= 'resultado'class='resultado'>
+            <img src="img/imagen.jpg" alt="Imagen de Poster de Pelicula">
+            <br>
+            <h1>Nombre de la Pelicula</h1>
+
+            <section class="data">
+                <ul>
+                    <li class="lanzamiento"> Año de Lanzamiento: 2021</li>
+                    <li>Serie o Pelicula</li>
+                </ul>
+            </section>
+            <div class="otrosResultado">
+                <p>Otros resultados</p>
+                <img src="img/imagen.jpg" alt="">
+                <img src="img/imagen.jpg" alt="">
+                <img src="img/imagen.jpg" alt="">
+            </div>
+        </article>
+    </main>
 </body>
 </html>

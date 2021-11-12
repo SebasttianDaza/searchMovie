@@ -7,7 +7,7 @@ const age = document.getElementById('search2');
 const btn = document.getElementById('btn');
 const result = document.getElementById('resultado');
 
-form
+
 
 //*Escuchar el evento click
 
@@ -92,7 +92,7 @@ function showUserData(userData) {
             </section>
             <div class="otrosResultado">
                 <p>Otros resultados</p>
-                <img onclick='newRequest()' src="${userData.imgData1}" alt="">
+                <img onclick='newRequest()' src="${userData.imgData1}" alt="" id='imgData1'>
                 <img onclick='newRequest()' src="${userData.imgData2}" alt="">
                 <img onclick='newRequest()' src="${userData.imgData3}" alt="">
             </div>
@@ -108,7 +108,8 @@ function showError(error) {}
 
 //*Funcion de los demas resultados
 
-const newRequest = () => {
+function newRequest(){
     location.href = "Paginas/resultado.html";
-    nuevasData();
 }
+
+
