@@ -1,6 +1,6 @@
 //*Importacion de archivos
 // Language: javascript
-// import {} from '../../main.js'
+import {userContent} from '../../features.js'
 
 //*Declaracion de variables
 
@@ -14,6 +14,7 @@ btnVolver.addEventListener('click', () => {
     location.href = '../index.html'
 })
 
+console.log(userContent);
 
 
 

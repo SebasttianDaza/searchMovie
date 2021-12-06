@@ -1,6 +1,7 @@
 
 //*Obtener el formulario, barra de busquedad y el boton
 
+
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 const age = document.getElementById('search2');
@@ -16,22 +17,26 @@ btn.addEventListener('click', (evt) => {
     const movie = search.value;
     
     getUserData(movie);
+    getUserData2(movie);
     search.value = '';
 })
 
 //*Obtener info de API
+const data = {};
 
-async function getUserData(movie) {
-    const API_KEY =
+const API_KEY =
       "https://api.themoviedb.org/3/search/movie?api_key=903ef257505ba6636ff7c0212d7d9f0c&language=es&query=";
 
-    
+
+
+async function getUserData(movie) {
 
     try {
         //*Obtener datos de la API
         const userRequest = await fetch(API_KEY + movie);
         const userData = await userRequest.json();
-
+        
+        
 
         if (userData.results.length === 0) {
             throw new Error('No results');
@@ -54,14 +59,11 @@ async function getUserData(movie) {
         userData.imgData3 = imgData3;
 
         
-         
-    
-        
-
         //Saber si tiene mas de 3 resultados
         showUserData(userData);
-
-
+        
+        
+        
 
        
 
@@ -78,7 +80,7 @@ async function getUserData(movie) {
 
 
 function showUserData(userData) {
-    console.log(userData);
+    //console.log(userData);
     let userContent = `
         <img src="${userData.imgData}" alt="Imagen de Poster de Pelicula">
             <br>
@@ -99,6 +101,7 @@ function showUserData(userData) {
     `;
 
     result.innerHTML = userContent;
+    
 
 }
 
@@ -108,9 +111,34 @@ function showError(error) {}
 
 //*Funcion de los demas resultados
 
+
+
 function newRequest() {
     location.href = "Paginas/resultado.html";
-    features();
+    
 }
 
+//*Function de API Extra resultados
 
+async function getUserData2(movie) {
+    const userRequest = await fetch(API_KEY + movie);
+    const userData = await userRequest.json();
+
+
+     //*Obtener poster de pelicula
+     const imgKey = "https://image.tmdb.org/t/p/w500/";
+     const imgData = imgKey + userData.results[0].poster_path;
+     userData.imgData = imgData;
+
+     //*Obtener poster de pelicula para los otros resultados
+     const imgData1 = imgKey + userData.results[1].poster_path;
+     userData.imgData1 = imgData1;
+
+     const imgData2 = imgKey + userData.results[2].poster_path;
+     userData.imgData2 = imgData2;
+
+     const imgData3 = imgKey + userData.results[3].poster_path;
+     userData.imgData3 = imgData3;
+
+     getPage(userData);
+}
