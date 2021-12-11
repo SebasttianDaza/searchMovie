@@ -1,6 +1,10 @@
 
 //*Obtener el formulario, barra de busquedad y el boton
-
+/**
+ *  @param {form} formulario Obtenmos el formulario de busquedad
+ * @param {search} input Obtenemos el valor del input
+ * @param {button} button Obtenemos el boton 
+ */
 
 const form = document.getElementById('form');
 const search = document.getElementById('search');
@@ -114,7 +118,7 @@ function showError(error) {}
 
 
 function newRequest() {
-    location.href = "Paginas/resultado.html";
+    location.href = "../Request/request.html";
     
 }
 
