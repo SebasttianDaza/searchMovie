@@ -1,5 +1,7 @@
 // Modulos de exportacion de data
 
-const getPage = (data) => {
-    console.log(data);
+//*Function de API Extra resultados
+
+function getDataRequest (movie) {
+    console.log(movie);
 }

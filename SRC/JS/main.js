@@ -1,9 +1,10 @@
 
-//*Obtener el formulario, barra de busquedad y el boton
+//*Obtener todos los elementos de la pagina
 /**
- *  @param {form} formulario Obtenmos el formulario de busquedad
+ * @param {form} formulario Obtenmos el formulario de busquedad
  * @param {search} input Obtenemos el valor del input
- * @param {button} button Obtenemos el boton 
+ * @param {btn} button Obtenemos el boton
+ * @param {result} result Obtenemos el div donde se mostraran los resultados 
  */
 
 const form = document.getElementById('form');
@@ -14,135 +15,109 @@ const result = document.getElementById('resultado');
 
 
 
-//*Escuchar el evento click
+//*Agregamos el evento al elemento
 
 btn.addEventListener('click', (evt) => {
     evt.preventDefault();
     const movie = search.value;
     
     getUserData(movie);
-    getUserData2(movie);
     search.value = '';
 })
 
 //*Obtener info de API
+
 const data = {};
 
+/**
+ *  @param {API_KEY} variable que contiene la llave de la API
+ */
 const API_KEY =
       "https://api.themoviedb.org/3/search/movie?api_key=903ef257505ba6636ff7c0212d7d9f0c&language=es&query=";
 
 
+/**
+ * {getUserData} Function para obtener la data de la API
+ * @param {userRequest} variable que contiene la peticion de la API 
+ * 
+ */
 
 async function getUserData(movie) {
 
     try {
-        //*Obtener datos de la API
-        const userRequest = await fetch(API_KEY + movie);
-        const userData = await userRequest.json();
-        
-        
+        //*Obtener datos de la API con fetch
 
-        if (userData.results.length === 0) {
-            throw new Error('No results');
-        }
+        fetch(API_KEY + movie)
+            .then(response => response.json())
+            .then(data => {
+                //*Reconocer si hay datos
+                if (data.results.length === 0) {
+                    throw new Error('No results');
+                } 
+                //* Si hay datos
+                else {
+                    const date = data;
+                    date.imgData = getPosterPath(data.results);
+                    showUserData(date);
+                    getDataRequest(date);
+                }
+            })
 
-        
-        //*Obtener poster de pelicula
-        const imgKey = "https://image.tmdb.org/t/p/w500/";
-        const imgData = imgKey + userData.results[0].poster_path;
-        userData.imgData = imgData;
-
-        //*Obtener poster de pelicula para los otros resultados
-        const imgData1 = imgKey + userData.results[1].poster_path;
-        userData.imgData1 = imgData1;
-
-        const imgData2 = imgKey + userData.results[2].poster_path;
-        userData.imgData2 = imgData2;
-
-        const imgData3 = imgKey + userData.results[3].poster_path;
-        userData.imgData3 = imgData3;
-
-        
-        //Saber si tiene mas de 3 resultados
-        showUserData(userData);
-        
-        
-        
-
-       
+        //*Console para mostrar info
+        console.info('Estamos procesando los datos de la API');
 
     } catch (error) {
         showError(error.message);
     
     }
-
-    
-
 }
+
+//*Obetener Poster Path dinamicamente
+
+function getPosterPath(movie) {
+    const arrPoster = [];
+    const imgKey = "https://image.tmdb.org/t/p/w500/";
+    for (let i = 0; i < movie.length; i++) {
+        arrPoster.push(imgKey + movie[i].poster_path);
+    }
+
+    return arrPoster;
+}
+
 
 //*function para modificar HTML
 
 
-function showUserData(userData) {
-    //console.log(userData);
-    let userContent = `
-        <img src="${userData.imgData}" alt="Imagen de Poster de Pelicula">
+function showUserData(data) {
+   let userContent = `
+        <img src="${data.imgData[0]}" alt="Imagen de Poster de Pelicula">
             <br>
-            <h1>${userData.results[0].original_title}</h1>
+            <h1>${data.results[0].original_title}</h1>
 
             <section class="data">
                 <ul>
-                    <li class="lanzamiento">${userData.results[0].release_date}</li>
-                    <li>${userData.results[0].popularity}</li>
+                    <li class="lanzamiento">${data.results[0].release_date}</li>
+                    <li>${data.results[0].popularity}</li>
                 </ul>
             </section>
             <div class="otrosResultado">
                 <p>Otros resultados</p>
-                <img onclick='newRequest()' src="${userData.imgData1}" alt="" id='imgData1'>
-                <img onclick='newRequest()' src="${userData.imgData2}" alt="">
-                <img onclick='newRequest()' src="${userData.imgData3}" alt="">
+                <img onclick='newRequest()' src="${data.imgData[1]}" alt="" id='imgData1'>
+                <img onclick='newRequest()' src="${data.imgData[2]}" alt="">
+                <img onclick='newRequest()' src="${data.imgData[3]}" alt="">
             </div>
     `;
 
-    result.innerHTML = userContent;
+    result.innerHTML = userContent; 
     
 
 }
 
 //*Funcion de Errores
 
-function showError(error) {}
+function showError(error) {
+    result.innerHTML = `<p>${error}</p>`;
+    console.error('Encontramos un error: ', error);
 
-//*Funcion de los demas resultados
-
-
-
-function newRequest() {
-    location.href = "../Request/request.html";
-    
 }
 
-//*Function de API Extra resultados
-
-async function getUserData2(movie) {
-    const userRequest = await fetch(API_KEY + movie);
-    const userData = await userRequest.json();
-
-
-     //*Obtener poster de pelicula
-     const imgKey = "https://image.tmdb.org/t/p/w500/";
-     const imgData = imgKey + userData.results[0].poster_path;
-     userData.imgData = imgData;
-
-     //*Obtener poster de pelicula para los otros resultados
-     const imgData1 = imgKey + userData.results[1].poster_path;
-     userData.imgData1 = imgData1;
-
-     const imgData2 = imgKey + userData.results[2].poster_path;
-     userData.imgData2 = imgData2;
-
-     const imgData3 = imgKey + userData.results[3].poster_path;
-     userData.imgData3 = imgData3;
-
-     getPage(userData);
-}

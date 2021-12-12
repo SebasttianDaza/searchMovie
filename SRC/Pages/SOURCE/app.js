@@ -1,6 +1,6 @@
 //*Importacion de archivos
 // Language: javascript
-import {userContent} from '../../features.js'
+import {} from '../../features.js'
 
 //*Declaracion de variables
 
@@ -11,7 +11,7 @@ const section = document.getElementById('resultado');
 
 //*Declaracion de eventos
 btnVolver.addEventListener('click', () => {
-    location.href = '../index.html'
+    location.href = '../../index.html'
 })
 
 console.log(userContent);
