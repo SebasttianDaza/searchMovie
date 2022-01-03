@@ -60,8 +60,10 @@ async function getUserData(movie) {
         dat = data;
       }) //*Guardar datos en una variable
       .then(() => {
-        //*Mostrar datos en el DOM
-        changeApi(dat);
+        //*Convertir datos Object a Array
+        const valoer = Object.values(dat);
+        //*Poder manteener los datos en una variable ||| Aqui quedamos con los datos de la API
+        changeApi(valoer);
       });
 
     //*Console para mostrar info
@@ -115,7 +117,8 @@ function showError(error) {
   console.error("Encontramos un error: ", error);
 }
 
+//Guardar datos en localStorage
 
-export function changeApi(data) {
-    return data
+function changeApi(data) {
+  localStorage.setItem("data", JSON.stringify(data));
 }
