@@ -91,16 +91,18 @@ function showUserData(data) {
   let userContent = `
         <img src="${data.imgData[0]}" alt="Imagen de Poster de Pelicula">
             <br>
-            <h1>${data.results[0].original_title}</h1>
+           
 
             <section class="data">
+             <h1>${data.results[0].original_title}</h1>
                 <ul>
                     <li class="lanzamiento">${data.results[0].release_date}</li>
                     <li>${data.results[0].popularity}</li>
                 </ul>
             </section>
+            <p class='p'>Otros resultados</p>
             <div class="otrosResultado">
-                <p>Otros resultados</p>
+                
                 <img onclick='newRequest()' src="${data.imgData[1]}" alt="" id='imgData1'>
                 <img onclick='newRequest()' src="${data.imgData[2]}" alt="">
                 <img onclick='newRequest()' src="${data.imgData[3]}" alt="">
