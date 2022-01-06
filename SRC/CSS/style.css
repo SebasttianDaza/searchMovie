@@ -1,11 +1,9 @@
 * {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Lobster Two', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
-
 
 body {
     display: flex;
@@ -16,8 +14,7 @@ body {
 
 main {
     width: 80%;
-
-    background-color: #1E213A;
+    height: auto;
     padding: 2rem 2rem;
    /* Morphismo */
     background: rgba( 255, 255, 255, 0.25 );
@@ -118,25 +115,35 @@ main {
 
 /*Menu de Resultado*/
 
-.resultado img {
+
+
+.row {
     float: left;
     width: 50%;
+
+}
+
+.resultado img {
     width: 250px;
-    height: 350px;
+    height: auto;
     border-radius: .5rem;
     box-shadow: 2px .5rem .5rem  black;
     margin: auto;
     cursor: pointer;
+    margin-left: 2rem;
 }
 
 .data {
+    margin-top: 15px;
+    margin-left: 0;
     float: right;
-    width: 45%;
+    width: 50%;
     height: 350px;
-    background: linear-gradient(25deg, #a76c2a, #21293a);
+    background: linear-gradient(25deg, #573c1e,#FB9800);
     border: 1px  #fff;
-    border-radius: .5rem;
-    box-shadow: 1rem -1rem  #4d527e;
+    border-radius: .2rem;
+    box-shadow: .5rem -.5rem  #000000;
+    align-items: center;
 }
 
 .data h1 {
@@ -156,8 +163,15 @@ main {
     justify-content: space-evenly;
 }
 
+.data p {
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    padding: 15px;
+    
+}
+
 .p {
-    display: inline-block;
     font-size: 18px;
     color: white;
     text-align: center;
@@ -168,17 +182,17 @@ main {
 .otrosResultado {
     position: relative;
     top: 3rem;
-    margin: 1rem;
+    margin-bottom: 3rem;
     width: 100%;
-    display: grid;
-    grid-template-columns: 31% 31% 31%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .otrosResultado img {
     border-radius: .5rem;
     box-shadow: 0 .5rem .5rem  black;
-    width: 100%; 
-    height: 200px;
+    width: auto; 
+    height: 250px;
     margin: 1rem;
 
 }
