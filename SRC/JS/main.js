@@ -6,9 +6,8 @@
  * @param {result} result Obtenemos el div donde se mostraran los resultados
  */
 
-const form = document.getElementById("form");
-const search = document.getElementById("search");
-const age = document.getElementById("search2");
+const form = document.getElementById("forma");
+const search = document.getElementById("Search");
 const btn = document.getElementById("btn");
 const result = document.getElementById("resultado");
 
@@ -89,24 +88,31 @@ function getPosterPath(movie) {
 
 function showUserData(data) {
   let userContent = `
-      <div class="row">
-        <img src="${data.imgData[0]}" alt="Imagen de Poster de Pelicula">
-      </div>
-            <div class="data">
-             <h1>${data.results[0].original_title}</h1>
-                <ul>
-                    <li class="lanzamiento">${data.results[0].release_date}</li>
-                    <li>${data.results[0].popularity}</li>
-                </ul>
-                <p>${data.results[0].overview}</p>
-            </div>
-            
-            <div class="otrosResultado">
+      <div class="image">
+                    <img src="${data.imgData[0]}">
+                </div>
+
+                <div class="data">
+                    <h1>${data.results[0].original_title}</h1>
+                    <p>${data.results[0].overview}</p>
+                    <ul>
+                        <p>Fecha de Lanzamiento</p>
+                        <p>Reaiting</p>
+                        <li>${data.results[0].release_date}</li>
+                        <li>${data.results[0].popularity}</li>
+                    </ul>
                 
-                <img onclick='newRequest()' src="${data.imgData[1]}" alt="" id='imgData1'>
-                <img onclick='newRequest()' src="${data.imgData[2]}" alt="">
-                <img onclick='newRequest()' src="${data.imgData[3]}" alt="">
-            </div>
+                
+                
+                </div>
+                
+                <h2>Otros resultados</h2>
+            
+                <div class="otrosResultados">
+                    <img onclick='newRequest()'src="${data.imgData[1]}" alt="">
+                    <img onclick='newRequest()' src="${data.imgData[2]}" alt="">
+                    <img onclick='newRequest()'src="${data.imgData[3]}" alt="">
+                </div>
     `;
 
   result.innerHTML = userContent;

@@ -1,5 +1,5 @@
 * {
-    font-family:'Lobster Two', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Lobster Two', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -7,77 +7,97 @@
 
 body {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #100E1D;
-    padding: 4rem;
+    padding: 2rem;
 }
 
-main {
-    width: 80%;
-    height: auto;
-    padding: 2rem 2rem;
-   /* Morphismo */
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    order: 1px solid rgba( 255, 255, 255, 0.18 );
+/* Contenedor principal header */
+header {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+}
+
+/* Contenedor del icono */
+
+.principal {
+    display: flex;
+    justify-content: flex-start;
+    height: 30%;
+    align-self: flex-start;
+}
+
+.dark {
+    display: flex;
+    width: 20%;
+    height: 20%;
+    margin: 1rem;
+}
+
+.dark i {
+    font-size: 2rem;
+    color: #fff;
 }
 
 /* Menu de Busquedad*/
 
 .search {
+    display: flex;
+    width: 80%;
+    height: auto;
+    padding: 2rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* Morphismo */
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+}
+
+#forma {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
     height: 7rem;
-    padding: 3rem;
-    border-radius: .5rem;
-
+    margin: .2rem;
+    padding: 0;
     background: rgba( 0, 0, 0, 0.45 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 13px );
-    -webkit-backdrop-filter: blur( 13px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 #forma input {
-    float: left;
-    width: 60%;
-    color: none;
-    height: 100%;
-    padding: .5rem;
-    outline: none;
+    width: 50%;
+    width: 30rem;
+    height: 3rem;
     background: rgba( 255, 255, 255, 0.18 );
     border-radius: .4rem;   
     border: none;
 }
 
-#forma input:placeholder-shown {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-#forma input:focus {
-    border: 2px solid #1E213A;
-}
-
-.button {
+#forma button {
+    width: 40%;
+    width: 10rem;
     height: 100%;
-    float: right;
-    width: 30%;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    /* Efectos */
     align-items: center;
     background-image: linear-gradient(144deg,#AF40FF, #5B42F3 30%,#00DDEB);
     border: 0;
-    border-radius: 8px;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    border-radius: .4rem;
+    box-shadow: rgb(151, 65, 252, 0.2) 0 15px 30px -5px;
     box-sizing: border-box;
-    color: #FFFFFF;
-    display: flex;
-    font-family: Phantomsans, sans-serif;
-    font-size: 12px;
-    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
     line-height: 1em;
     max-width: 100%;
     min-width: 100px;
@@ -91,108 +111,110 @@ main {
     transition: all .3s;
 }
 
-.button:active,
-.button:hover {
- outline: 0;
+#forma button:active, #forma button:hover {
+    outline: 0;
 }
 
 .button span {
- background-color: rgb(5, 6, 45);
- padding: 12px 15px;
- border-radius: 6px;
- width: 100%;
- height:100%;
- transition: 300ms;
+    background-color: rgb(5, 6, 45);
+    padding: 12px 15px;
+    border-radius: .4rem;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
 }
 
 .button:hover span {
- background: none;
+    background: none;
 }
 
 .button:active {
- transform: scale(0.9);
+    transform: scale(0.9);
 }
 
 /*Menu de Resultado*/
 
-
-
-.row {
-    float: left;
-    width: 50%;
-
+.resultado {
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    margin: 2rem;
+    height: auto;
 }
 
-.resultado img {
-    width: 250px;
+/* Image */
+
+.image {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 20rem;
+}
+
+.image img {
+    max-width: 100%;
     height: auto;
     border-radius: .5rem;
-    box-shadow: 2px .5rem .5rem  black;
-    margin: auto;
-    cursor: pointer;
-    margin-left: 2rem;
 }
+
+/* Data */
 
 .data {
-    margin-top: 15px;
-    margin-left: 0;
-    float: right;
-    width: 50%;
-    height: 350px;
-    background: linear-gradient(25deg, #573c1e,#FB9800);
-    border: 1px  #fff;
-    border-radius: .2rem;
-    box-shadow: .5rem -.5rem  #000000;
-    align-items: center;
-}
-
-.data h1 {
-    padding: 1rem;
-    color: white;
-    font-size: 30px;
-    text-align: center;
-}
-
-.data ul {
-    color: white;
-    font-size: 20px;
-    margin: 0;
-    padding: 0;
     display: flex;
-    list-style-type: none;
-    justify-content: space-evenly;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: #100e1d9d;
+    color: #fff;
+    width: 50%;
+    height: auto;
+    border: .1rem solid #100e1dd2;
+    border-radius: .5rem;
 }
 
 .data p {
-    color: white;
-    font-size: 20px;
-    margin: 0;
-    padding: 15px;
-    
-}
-
-.p {
-    font-size: 18px;
-    color: white;
     text-align: center;
     padding: 1rem;
 }
 
-/* Otros Resultados*/
-.otrosResultado {
-    position: relative;
-    top: 3rem;
-    margin-bottom: 3rem;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+.data ul {
+    display: grid;
+    margin: 0 2rem 0 2rem;
+    width: 90%;
+    height: 7rem;
+    border-radius: .5rem;
+    grid-template-columns: 50% 50%;
+    background-color: rgba(255, 255, 255, 0.137);
 }
 
-.otrosResultado img {
-    border-radius: .5rem;
-    box-shadow: 0 .5rem .5rem  black;
-    width: auto; 
-    height: 250px;
-    margin: 1rem;
+.data ul li {
+    list-style: none;
+    text-align: center;
+}
 
+
+
+/* Otros Resultados */
+
+h2 {
+    width: 100%;
+    height: 4rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.otrosResultados {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+}
+
+.otrosResultados img {
+    width: 12rem;
+    max-width: 100%;
+    height: auto;
+    border-radius: .5rem
 }

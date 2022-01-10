@@ -13,6 +13,9 @@
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Staatliches&display=swap" rel="stylesheet">
 
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
     <!-- *Styles changing of Project -->
     <link rel="stylesheet" href="SRC/CSS/style.css">
     <link rel="stylesheet" href="SRC/CSS/window.css">
@@ -24,34 +27,56 @@
     
 </head>
 <body>
-    <main>
-        <!-- *Menu de Busquedad -->
-        <section class="search">
-            <form id="forma">
-                <input type="search" name="search" placeholder="Titulo"id="search">
-                <button id="btn" class ='button'"><span class="text">Buscar</span></button>
-            </form>
-        </section>
-        <br>
-        <!-- *Menu de Resultado -->
-        <article id= 'resultado'class='resultado'>
-            <!-- <img src="img/imagen.jpg" alt="Imagen de Poster de Pelicula">
-            <br>
-            <h1>Nombre de la Pelicula</h1>
+    <!-- Principal -->
+    <header>
+        <!-- Menu -->
+        <nav class="principal">
+            <div class="dark">
+                <i class="bi bi-cloud-sun-fill"></i>
+            </div>
+        </nav>
 
-            <section class="data">
-                <ul>
-                    <li class="lanzamiento"> Año de Lanzamiento: 2021</li>
-                    <li>Serie o Pelicula</li>
-                </ul>
-            </section>
-            <div class="otrosResultado">
-                <p>Otros resultados</p>
-                <img src="img/imagen.jpg" alt="">
-                <img src="img/imagen.jpg" alt="">
-                <img src="img/imagen.jpg" alt="">
-            </div>-->
-        </article>
-    </main>
+        <!-- Search -->
+        <main class='search'>
+            <!-- *Menu de Busquedad -->
+            <form id="forma">
+                <input type="text" name="search" placeholder="Search a for a movie" id="Search">
+                <button id="btn" class='button'"><span class=" text">Buscar</span></button>
+            </form>
+           
+            <!-- *Menu de Resultado -->
+            <article id= 'resultado' class='resultado'>
+                <!-- Imagen principal -->
+                <!-- <div class="image">
+                    <img src="https://www.clarin.com/img/2021/11/09/spider-man-no-way-home___F4niY92zZ_720x0__1.jpg">
+                </div>
+
+                <div class="data">
+                    <h1>Nombre de la Pelicula</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequuntur nesciunt sunt sed nostrum, beatae
+                        alias quam obcaecati molestias voluptatem debitis tempora dicta inventore enim a, maiores, voluptas dolore
+                        perferendis!
+                        Doloribus sapiente.</p>
+                    <ul>
+                        <p>Fecha de Lanzamiento</p>
+                        <p>Reaiting</p>
+                        <li>01/07/2022</li>
+                        <li>8.5</li>
+                    </ul>
+                
+                
+                
+                </div>
+                
+                <h2>Otros resultados</h2>
+            
+                <div class="otrosResultados">
+                    <img onclick='newRequest()'src="https://www.clarin.com/img/2021/11/09/spider-man-no-way-home___F4niY92zZ_720x0__1.jpg" alt="">
+                    <img onclick='newRequest()' src="https://www.clarin.com/img/2021/11/09/spider-man-no-way-home___F4niY92zZ_720x0__1.jpg" alt="">
+                    <img onclick='newRequest()'src="https://www.clarin.com/img/2021/11/09/spider-man-no-way-home___F4niY92zZ_720x0__1.jpg" alt="">
+                </div> -->
+            </article>
+        </main>
+    </header>
 </body>
 </html>
