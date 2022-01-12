@@ -1,15 +1,17 @@
 * {
-    font-family:'Lobster Two', sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    --principla-color: #100E1D;
 }
 
 body {
     display: flex;
-    justify-content: space-between;
-    background-color: #100E1D;
+    flex-direction: column;
+    background-color: var(--principla-color);
     padding: 2rem;
+    width: auto;
 }
 
 /* Contenedor principal header */
@@ -38,6 +40,7 @@ header {
 .dark i {
     font-size: 2rem;
     color: #fff;
+    transition: margin-right 2s .5s;
 }
 
 /* Menu de Busquedad*/
@@ -80,6 +83,26 @@ header {
     background: rgba( 255, 255, 255, 0.18 );
     border-radius: .4rem;   
     border: none;
+    outline: none;
+    border: none;
+}
+
+#forma input:placeholder-shown {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+   
+}
+
+#forma input:focus {
+    border: 2px solid #1E213A;
+}
+
+#forma input:read-write {
+    background-color:rgba( 255, 255, 255, 0.18 );
+    color: #fff;
+    text-align: center;
 }
 
 #forma button {
@@ -154,9 +177,12 @@ header {
 }
 
 .image img {
+    position: relative;
     max-width: 100%;
     height: auto;
     border-radius: .5rem;
+    box-shadow: .5rem .6rem .5rem  #100e1d83;
+    cursor: pointer;
 }
 
 /* Data */
@@ -181,7 +207,7 @@ header {
 
 .data ul {
     display: grid;
-    margin: 0 2rem 0 2rem;
+    margin: 0 2rem .4rem 2rem;
     width: 90%;
     height: 7rem;
     border-radius: .5rem;
@@ -216,5 +242,7 @@ h2 {
     width: 12rem;
     max-width: 100%;
     height: auto;
-    border-radius: .5rem
+    border-radius: .5rem;
+    cursor: pointer;
 }
+

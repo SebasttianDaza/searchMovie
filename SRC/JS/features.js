@@ -6,3 +6,4 @@ function newRequest() {
     
 }
 
+//Funcion para cambiar el estado colores a light

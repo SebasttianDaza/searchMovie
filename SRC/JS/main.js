@@ -90,6 +90,7 @@ function showUserData(data) {
   let userContent = `
       <div class="image">
                     <img src="${data.imgData[0]}">
+                    <h3 class='haver'>${data.results[0].title}</h3>
                 </div>
 
                 <div class="data">
@@ -109,7 +110,7 @@ function showUserData(data) {
                 <h2>Otros resultados</h2>
             
                 <div class="otrosResultados">
-                    <img onclick='newRequest()'src="${data.imgData[1]}" alt="">
+                    <img class='hob' onclick='newRequest()'src="${data.imgData[1]}" alt="">
                     <img onclick='newRequest()' src="${data.imgData[2]}" alt="">
                     <img onclick='newRequest()'src="${data.imgData[3]}" alt="">
                 </div>
