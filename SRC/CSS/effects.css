@@ -59,7 +59,7 @@
     cursor: pointer;
     animation-name: color;
     animation-duration: 1000ms;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
 }
 
 @keyframes color {
@@ -76,8 +76,20 @@
     }
 }
 
+.full {
+    transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68);
+}
+
 /* Efecto light */
 
-#light {
-    background-color: var(--light-bakc);
+.light {
+    background-color: #4B9FBE; 
+    transition: all 1s ease-out;
+    transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68);
 }
+
+.efect {
+    transition: all 1s ease-out;
+    transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68);
+}
+

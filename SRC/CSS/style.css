@@ -7,10 +7,13 @@
     --light-bakc: #6592bd;
 }
 
+.bady {
+    background-color: var(--principla-color);
+}
+
 body {
     display: flex;
     flex-direction: column;
-    background-color: var(--principla-color);
     padding: 2rem;
     width: auto;
 }
