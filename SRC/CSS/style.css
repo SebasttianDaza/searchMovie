@@ -50,13 +50,14 @@ header {
 
 /* Menu de Busquedad*/
 
-.search {
+#search {
     display: flex;
     width: 80%;
     height: auto;
     padding: 2rem;
     flex-direction: row;
     flex-wrap: wrap;
+    transition: all 3s;
     /* Morphismo */
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
