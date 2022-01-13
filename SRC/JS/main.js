@@ -110,9 +110,18 @@ function showUserData(data) {
                 <h2>Otros resultados</h2>
             
                 <div class="otrosResultados">
-                    <img class='hob' onclick='newRequest()'src="${data.imgData[1]}" alt="">
-                    <img onclick='newRequest()' src="${data.imgData[2]}" alt="">
-                    <img onclick='newRequest()'src="${data.imgData[3]}" alt="">
+                  <div>
+                    <h3 onclick='newRequest()'>${data.results[1].title}</h3>
+                    <img src="${data.imgData[1]}" alt="">
+                  </div>
+                  <div>
+                    <h3 onclick='newRequest()'>${data.results[2].title}</h3>
+                    <img src="${data.imgData[2]}" alt="">
+                  </div>
+                  <div>
+                    <h3 onclick='newRequest()'>${data.results[3].title}</h3>
+                    <img src="${data.imgData[3]}" alt="">
+                  </div>
                 </div>
     `;
 

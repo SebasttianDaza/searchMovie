@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     --principla-color: #100E1D;
+    --light-bakc: #6592bd;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
     padding: 2rem;
     width: auto;
 }
+
 
 /* Contenedor principal header */
 header {
@@ -183,6 +185,7 @@ header {
     border-radius: .5rem;
     box-shadow: .5rem .6rem .5rem  #100e1d83;
     cursor: pointer;
+    
 }
 
 /* Data */
@@ -244,5 +247,6 @@ h2 {
     height: auto;
     border-radius: .5rem;
     cursor: pointer;
+    z-index: -1;
 }
 
