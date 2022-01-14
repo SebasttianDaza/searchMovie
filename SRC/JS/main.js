@@ -63,6 +63,7 @@ async function getUserData(movie) {
         const valoer = Object.values(dat);
         //*Poder manteener los datos en una variable ||| Aqui quedamos con los datos de la API
         changeApi(valoer);
+        va++;
       });
 
     //*Console para mostrar info
@@ -111,15 +112,15 @@ function showUserData(data) {
             
                 <div class="otrosResultados">
                   <div>
-                    <h3 onclick='newRequest()'>${data.results[1].title}</h3>
+                    <h3 onclick='newRequest(num = 1)'>${data.results[1].title}</h3>
                     <img src="${data.imgData[1]}" alt="">
                   </div>
                   <div>
-                    <h3 onclick='newRequest()'>${data.results[2].title}</h3>
+                    <h3 onclick='newRequest(num = 2)'>${data.results[2].title}</h3>
                     <img src="${data.imgData[2]}" alt="">
                   </div>
                   <div>
-                    <h3 onclick='newRequest()'>${data.results[3].title}</h3>
+                    <h3 onclick='newRequest(num = 3)'>${data.results[3].title}</h3>
                     <img src="${data.imgData[3]}" alt="">
                   </div>
                 </div>
@@ -136,7 +137,17 @@ function showError(error) {
 }
 
 //Guardar datos en localStorage
+let va;
 
-function changeApi(data) {
+async function changeApi(data) {
+  await validacion(va);
   localStorage.setItem("data", JSON.stringify(data));
 }
+
+
+const validacion = (va) => {
+  if(va > 0){
+    localStorage.clear();
+  }
+}
+

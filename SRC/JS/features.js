@@ -3,14 +3,17 @@
 const icon = document.getElementById("icon");
 const main = document.getElementById("search");
 
+let present;
+
 //*Funcion de los demas resultados
 
-function newRequest() {
+function newRequest(num) {
     location.href = "../../Pages/request.html";
+    present = num ;
     
 }
 
-
+console.log(present);
 
 icon.addEventListener("click", () => {
   changeLight();
