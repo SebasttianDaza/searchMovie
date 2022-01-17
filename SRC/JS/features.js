@@ -9,11 +9,9 @@ let present;
 
 function newRequest(num) {
     location.href = "../../Pages/request.html";
-    present = num ;
+    present += num ;
     
 }
-
-console.log(present);
 
 icon.addEventListener("click", () => {
   changeLight();

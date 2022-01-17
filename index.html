@@ -27,7 +27,7 @@
     <!-- *JS Changing of Project -->
     <script defer src="SRC/JS/main.js"></script>
     <script defer src="SRC/JS/features.js"></script>
-    <script defer src="SRC/Components/request.js"></script>
+    <script defer type="module" src="SRC/Components/request.js"></script>
     
     
 </head>
@@ -52,11 +52,13 @@
            
             <!-- *Menu de Resultado -->
             <article id= 'resultado' class='resultado'>
+                
+                
                 <!-- Imagen principal -->
                 <!-- <div class="image">
                     <img src="https://www.clarin.com/img/2021/11/09/spider-man-no-way-home___F4niY92zZ_720x0__1.jpg">
                 </div>
-
+                
                 <div class="data">
                     <h1>Nombre de la Pelicula</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequuntur nesciunt sunt sed nostrum, beatae
@@ -83,6 +85,47 @@
                 </div> -->
             </article>
         </main>
+        <template id="firstComponet">
+            <link rel="stylesheet" href="SRC/Components/one.css">
+                <div id='nuevo'>
+                    <button class="text1"><span class="text2">Regersar</span></button>
+                </div>
+                <section id="sar">
+                    <div class="imagine">
+                        <img src="https://www.clarin.com/img/2021/11/09/spider-man-no-way-home___F4niY92zZ_720x0__1.jpg">
+                        <h3 class='imagineH'>Nombre de la Pelicula</h3>
+                    </div>
+                    
+                    <div class="dato">
+                        <h1>Nombre de la Pelicula</h1>
+                        <p>fdfdf</p>
+                        <ul>
+                            <p>Fecha de Lanzamiento</p>
+                            <p>Reaiting</p>
+                            <li>$fdf</li>
+                            <li>fdsfdf</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <h2 class="web">Otros resultados</h2>
+                
+                <div class="component">
+                    <div>
+                        <h3 onclick='newRequest(num = 1)'>Nombre de la Pelicula</h3>
+                        <img src="https://www.clarin.com/img/2021/11/09/spider-man-no-way-home___F4niY92zZ_720x0__1.jpg" alt="">
+                    </div>
+                    <div>
+                        <h3 onclick='newRequest(num = 2)'>Nombre de la Pelicula</h3>
+                        <img src="https://www.clarin.com/img/2021/11/09/spider-man-no-way-home___F4niY92zZ_720x0__1.jpg" alt="">
+                    </div>
+                    <div>
+                        <h3 onclick='newRequest(num = 3)'>Nombre de la Pelicula</h3>
+                        <img src="$https://www.clarin.com/img/2021/11/09/spider-man-no-way-home___F4niY92zZ_720x0__1.jpg" alt="">
+                    </div>
+                </div>
+
+        </template>
     </header>
 </body>
 </html>

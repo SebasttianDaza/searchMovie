@@ -1,4 +1,6 @@
 
+
+// Function para obtener la data de la API
 function getLocal() {
   if (localStorage.getItem("data")) {
     //Obtener data de localStorage

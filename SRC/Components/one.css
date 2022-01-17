@@ -1,0 +1,37 @@
+/* Nuevo Boton */
+/* Elemento Definido */
+:defined {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+#nuevo {
+    display: grid;
+    grid-template-columns: 1fr ;
+}
+
+#sar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    grid-gap: 3rem;
+}
+
+.imagine {
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+}
+
+.imagine img {
+    width: 15rem;
+    max-width: 100%;
+    height: auto;
+    border-radius: .5rem;
+    box-shadow: .5rem .6rem .5rem  #100e1d83;
+    cursor: pointer;
+}
+
