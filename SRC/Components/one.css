@@ -1,8 +1,10 @@
 /* Nuevo Boton */
 /* Elemento Definido */
 :defined {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-column: 3rem;
     width: 100%;
 
 }
@@ -10,23 +12,27 @@
 #nuevo {
     display: grid;
     grid-template-columns: 1fr ;
+    margin: 1rem;
 }
 
+/* Contenedor Principal */
 #sar {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    grid-gap: 3rem;
+    grid-gap: 3rem 3rem;
 }
 
+/* Imagen Pricipal */
 .imagine {
     display: grid;
-    align-self: center;
-    justify-self: center;
+    justify-items: center;
+    align-items: center;
     width: 100%;
 }
 
 .imagine img {
+    position: relative;
     width: 15rem;
     max-width: 100%;
     height: auto;
@@ -35,3 +41,111 @@
     cursor: pointer;
 }
 
+.imagineH { 
+    display: flex;
+    align-items: center;
+    position: absolute;
+    color: rgba(238, 228, 220, 0.877);
+    font-size: 1.5rem;
+    height: 19rem;
+    width: 15rem;
+    max-width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    border-radius: .5rem;
+    transition: all .4s
+}
+
+.imagineH:hover {
+    backdrop-filter: blur(1px);
+    opacity: 2;
+    cursor: pointer;
+
+}
+
+/* Data */
+.dato {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    background-color: #100e1d9d;
+    color: #fff;
+    height: auto;
+    border: .1rem solid #100e1dd2;
+    border-radius: .5rem;
+}
+
+.dato h1 {
+    text-align: center;
+}
+
+.dato ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.137);
+    width: 80%;
+    border-radius: .5rem;
+    height: auto;
+}
+
+.data ul li {
+    text-align: center;
+}
+
+/* Otros resultados titulo */
+
+.web {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+    height: auto;
+}
+
+.component {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    justify-items: center;
+    align-items: center;
+}
+
+.component div img {
+    position: relative;
+    width: 15rem;
+    max-width: 100%;
+    height: auto;
+    border-radius: .5rem;
+    box-shadow: .5rem .6rem .5rem  #100e1d83;
+    cursor: pointer;
+}
+
+
+.expe { 
+    display: flex;
+    align-items: center;
+    position: absolute;
+    color: rgba(238, 228, 220, 0.877);
+    font-size: 1.5rem;
+    height: 19rem;
+    width: 15rem;
+    max-width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    border-radius: .5rem;
+    transition: all .4s
+}
+
+.expe:hover {
+    backdrop-filter: blur(1px);
+    opacity: 2;
+    cursor: pointer;
+
+}

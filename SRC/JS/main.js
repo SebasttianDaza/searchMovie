@@ -125,7 +125,7 @@ function showUserData(data) {
                   </div>
                 </div>
     `;
-  result.innerHTML = "<request-result></request-result>";
+  result.innerHTML = userContent;
 }
 
 //*Funcion de Errores
