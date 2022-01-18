@@ -126,6 +126,13 @@ function showUserData(data) {
                 </div>
     `;
   result.innerHTML = userContent;
+
+  () => {
+    sessionStorage.setItem("back", JSON.stringify(userContent));
+    setInterval(() => {
+      sessionStorage.removeItem("back");
+    }, 4000); //*Quede aqui con un error de carga
+  };
 }
 
 //*Funcion de Errores
