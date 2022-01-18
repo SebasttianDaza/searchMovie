@@ -60,9 +60,9 @@ async function getUserData(movie) {
       }) //*Guardar datos en una variable
       .then(() => {
         //*Convertir datos Object a Array
-        const valoer = Object.values(dat);
+        const valor = Object.values(dat);
         //*Poder manteener los datos en una variable ||| Aqui quedamos con los datos de la API
-        changeApi(valoer);
+        changeApi(valor);
         va++;
       });
 
@@ -125,14 +125,14 @@ function showUserData(data) {
                   </div>
                 </div>
     `;
-  result.innerHTML = userContent;
+  result.insertAdjacentHTML("afterbegin", userContent);
+  // Guardar datos en local
+  setTemplate(userContent);
+}
 
-  () => {
-    sessionStorage.setItem("back", JSON.stringify(userContent));
-    setInterval(() => {
-      sessionStorage.removeItem("back");
-    }, 4000); //*Quede aqui con un error de carga
-  };
+function setTemplate(data) {
+  localStorage.setItem("template", JSON.stringify(data));
+  // Eliminar si hay datos, cada 1000 segundos
 }
 
 //*Funcion de Errores
@@ -150,6 +150,7 @@ async function changeApi(data) {
   localStorage.setItem("data", JSON.stringify(data));
 }
 
+//* Funcion para validar los datos
 
 const validacion = (va) => {
   if(va > 0){

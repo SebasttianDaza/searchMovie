@@ -7,6 +7,8 @@ With the API we can obtain:
 - Movie Poster
 - Name of a movie
 - Revealing facts about the movie
+- Using LocalStorage to save the movies that the user has already seen
+- Using Web Components to create the interface
 - Of course series data
 
 ❤️❤️❤️❤️
@@ -19,11 +21,19 @@ In this case so far we paint with the API:
 
 🌐⚠️💯💯💯
 
-![Imagen de la APP](https://firebasestorage.googleapis.com/v0/b/emprendeyourlifestyle.appspot.com/o/Proyectos%2FapiMovie2.png?alt=media&token=dbc6e858-e17e-4552-9f2e-0ed2298e88ef)
 
-![Imagen de la otra parte](https://firebasestorage.googleapis.com/v0/b/emprendeyourlifestyle.appspot.com/o/Proyectos%2FapiMovie.png?alt=media&token=01cca9f0-e7c9-44dc-aa83-e53b8e1e2674)
+## Theme Dark 🧵
+
+![Imagen de la APP](https://firebasestorage.googleapis.com/v0/b/emprendeyourlifestyle.appspot.com/o/darkMovie.jpg?alt=media&token=794953e5-511b-44c8-aa4f-09d9d5b369da)
+
+![Imagen de la otra parte](https://firebasestorage.googleapis.com/v0/b/emprendeyourlifestyle.appspot.com/o/darkMovieSearch.jpg?alt=media&token=58c489a4-998d-459d-be15-639fc94708fc)
+
+## Theme Light 🌙
+
+![Imagen de la otra parte](https://firebasestorage.googleapis.com/v0/b/emprendeyourlifestyle.appspot.com/o/lightMovie.jpg?alt=media&token=528ab02a-ce9f-4c5a-b98b-921ddf89775e)
+
+
+![Imagen de la otra parte](https://firebasestorage.googleapis.com/v0/b/emprendeyourlifestyle.appspot.com/o/lightMovieSeach.jpg?alt=media&token=ffbbbdd4-a415-4cd4-8b2f-ea132b5278d2)
 
 Of course the application is uploaded on a server. [Here](Api)
 
-
-(https://sebasttiandaza.github.io/searchMovie/) : Api  

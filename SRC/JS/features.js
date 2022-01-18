@@ -4,9 +4,10 @@ const icon = document.getElementById("icon");
 const main = document.getElementById("search");
 
 
-function newRequest(num) {
-      document.getElementById("resultado").innerHTML = `<request-result></request-result>`;
-}
+function newRequest() {
+    const  dadElement = document.getElementById("resultado");
+    dadElement.innerHTML = `"<request-result></request-result>"`;
+ }
 
 
 icon.addEventListener("click", () => {

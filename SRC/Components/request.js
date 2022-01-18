@@ -18,8 +18,8 @@ class RequestResult extends HTMLElement {
     }
 
     backPage() {
-      let nombre = JSON.parse(sessionStorage.getItem("back"));
-      document.getElementById("resultado").innerHTML = nombre;
+      let template = JSON.parse(localStorage.getItem("template"));
+      document.getElementById("resultado").innerHTML = template;
     }
     
 
