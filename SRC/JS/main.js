@@ -87,7 +87,7 @@ function getPosterPath(movie) {
 
 //*function para modificar HTML
 
-function showUserData(data) {
+async function showUserData(data) {
   let userContent = `
       <div class="image">
                     <img src="${data.imgData[0]}">
@@ -110,24 +110,24 @@ function showUserData(data) {
                 
                 <h2>Otros resultados</h2>
             
-                <div class="otrosResultados">
+                <div id="father" class="otrosResultados">
                   <div>
-                    <h3 onclick='newRequest(num = 1)'>${data.results[1].title}</h3>
+                    <h3 onclick='newRequest(event)' class="one">${data.results[1].title}</h3>
                     <img src="${data.imgData[1]}" alt="">
                   </div>
                   <div>
-                    <h3 onclick='newRequest(num = 2)'>${data.results[2].title}</h3>
+                    <h3 onclick='newRequest(event)' class="second">${data.results[2].title}</h3>
                     <img src="${data.imgData[2]}" alt="">
                   </div>
                   <div>
-                    <h3 onclick='newRequest(num = 3)'>${data.results[3].title}</h3>
+                    <h3 onclick='newRequest(event)' class="third">${data.results[3].title}</h3>
                     <img src="${data.imgData[3]}" alt="">
                   </div>
                 </div>
     `;
-  result.insertAdjacentHTML("afterbegin", userContent);
+  await result.insertAdjacentHTML("afterbegin", userContent);
   // Guardar datos en local
-  setTemplate(userContent);
+  await setTemplate(userContent);
 }
 
 function setTemplate(data) {

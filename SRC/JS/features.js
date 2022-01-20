@@ -3,10 +3,29 @@
 const icon = document.getElementById("icon");
 const main = document.getElementById("search");
 
+// Contador de Click
 
-function newRequest() {
+let index;
+
+function contableIndex(e) {
+  let contable;
+  if ( e.target.className === 'one' ) {
+    contable = 1;
+  }
+  if ( e.target.className === 'second' ) {
+    contable = 2;
+  }
+  if ( e.target.className === 'third' ) {
+    contable = 3;
+  }
+  return contable;
+}
+
+
+function newRequest(e) {
+    index = contableIndex(e);
     const  dadElement = document.getElementById("resultado");
-    dadElement.innerHTML = `"<request-result></request-result>"`;
+    dadElement.innerHTML = `<request-result index="${index}"></request-result>`;
  }
 
 
