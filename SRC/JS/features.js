@@ -1,6 +1,5 @@
 // Declaracion de Variables
 
-const icon = document.getElementById("icon");
 const main = document.getElementById("search");
 
 // Contador de Click
@@ -9,13 +8,13 @@ let index;
 
 function contableIndex(e) {
   let contable;
-  if ( e.target.className === 'one' ) {
+  if ( e === 'one' ) {
     contable = 1;
   }
-  if ( e.target.className === 'second' ) {
+  if ( e === 'second' ) {
     contable = 2;
   }
-  if ( e.target.className === 'third' ) {
+  if ( e === 'third' ) {
     contable = 3;
   }
   return contable;
@@ -23,15 +22,11 @@ function contableIndex(e) {
 
 
 function newRequest(e) {
-    index = contableIndex(e);
+    index = contableIndex(e.target.className);
     const  dadElement = document.getElementById("resultado");
     dadElement.innerHTML = `<request-result index="${index}"></request-result>`;
  }
 
-
-icon.addEventListener("click", () => {
-  changeLight();
-});
 
 //*Funcion para cambiar el color de fondo
 

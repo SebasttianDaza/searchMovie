@@ -11,15 +11,37 @@ const search = document.getElementById("Search");
 const btn = document.getElementById("btn");
 const result = document.getElementById("resultado");
 
+// Delegacion of events
+
+document.addEventListener("click", (e) => {
+  // Event principal of form the search
+  if(e.target.matches("#btn")){
+    if ( search.value.length === 0 ) {console.log("No hay datos");}
+    e.preventDefault();
+    const movie = search.value;
+    getUserData(movie);
+    search.value = "";
+  }
+  // Event of the icon dark or light
+  if( e.target.matches("#icon")){
+    changeLight();
+  }
+  // Evento a los otros resultados
+  if(e.target.matches("#father div h3 ")){
+    newRequest(e);
+  }
+})
+
+
 //*Agregamos el evento al elemento
 
-btn.addEventListener("click", (evt) => {
+/*btn.addEventListener("click", (evt) => {
   evt.preventDefault();
   const movie = search.value;
 
   getUserData(movie);
   search.value = "";
-});
+});*/
 
 //*Obtener info de API
 
@@ -112,15 +134,15 @@ async function showUserData(data) {
             
                 <div id="father" class="otrosResultados">
                   <div>
-                    <h3 onclick='newRequest(event)' class="one">${data.results[1].title}</h3>
+                    <h3 class="one">${data.results[1].title}</h3>
                     <img src="${data.imgData[1]}" alt="">
                   </div>
                   <div>
-                    <h3 onclick='newRequest(event)' class="second">${data.results[2].title}</h3>
+                    <h3 class="second">${data.results[2].title}</h3>
                     <img src="${data.imgData[2]}" alt="">
                   </div>
                   <div>
-                    <h3 onclick='newRequest(event)' class="third">${data.results[3].title}</h3>
+                    <h3 class="third">${data.results[3].title}</h3>
                     <img src="${data.imgData[3]}" alt="">
                   </div>
                 </div>

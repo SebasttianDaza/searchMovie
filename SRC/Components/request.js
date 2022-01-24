@@ -21,13 +21,8 @@ class RequestResult extends HTMLElement {
       if (localStorage.getItem("data")) {
         //Obtener data de localStorage
         let nombre = JSON.parse(localStorage.getItem("data"));
-        const objectAarray = Object.values(nombre);
-        // Here I'm
-        const recort = objectAarray.slice()
-        
-        console.log(recort, imgData);
-        this.changeIndex(index);
-
+        const p = nombre.filter(element => element.length > 10);
+        this.changeIndex(index, p);
       } else {
         console.warn("No hay datos, intente nuevamente");
       }
@@ -40,13 +35,8 @@ class RequestResult extends HTMLElement {
     }
 
     
-    changeIndex (index) {
-      console.log(index);
-       /*if ( index === 1) {
-         nombre.forEach(imgData => {
-           this.shadowRoot.getElementById('mg').src = imgData[1] 
-         })
-       }*/
+    changeIndex (index, data) {
+      this.shadowRoot.querySelector("#mg").src = data[1][1];
     }
 
     connectedCallback() {
