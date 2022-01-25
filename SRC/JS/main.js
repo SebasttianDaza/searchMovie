@@ -77,7 +77,6 @@ async function getUserData(movie) {
           showUserData(date);
         }
 
-        console.log(data);
         dat = data;
       }) //*Guardar datos en una variable
       .then(() => {
@@ -111,7 +110,8 @@ function getPosterPath(movie) {
 
 async function showUserData(data) {
   let userContent = `
-      <div class="image">
+      <section class="container">
+        <div class="image">
                     <img src="${data.imgData[0]}">
                     <h3 class='haver'>${data.results[0].title}</h3>
                 </div>
@@ -130,9 +130,11 @@ async function showUserData(data) {
                 
                 </div>
                 
+      </section>
                 <h2>Otros resultados</h2>
             
                 <div id="father" class="otrosResultados">
+                
                   <div>
                     <h3 class="one">${data.results[1].title}</h3>
                     <img src="${data.imgData[1]}" alt="">

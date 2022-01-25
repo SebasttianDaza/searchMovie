@@ -36,7 +36,17 @@ class RequestResult extends HTMLElement {
 
     
     changeIndex (index, data) {
-      this.shadowRoot.querySelector("#mg").src = data[1][1];
+      let datas = data[0];
+      // Function to filter information
+      function filterRange (arr, indexs) {
+        arr.filter( ( element, index) => {
+          if ( index >= indexs && index < 5) {
+            return element;
+          }
+        })
+      }
+      // Function to filter information
+      filterRange(datas, index);
     }
 
     connectedCallback() {

@@ -1,0 +1,23 @@
+{
+  "name": "apimovie",
+  "version": "1.0.0",
+  "description": "Web Site than use API for search movies, and show data",
+  "main": "main.js",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebasttianDaza/searchMovie.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebasttianDaza/searchMovie/issues"
+  },
+  "homepage": "https://github.com/SebasttianDaza/searchMovie#readme"
+}
