@@ -35,18 +35,49 @@ class RequestResult extends HTMLElement {
     }
 
     
-    changeIndex (index, data) {
+    changeIndex (indexs, data) {
       let datas = data[0];
-      // Function to filter information
-      function filterRange (arr, indexs) {
-        arr.filter( ( element, index) => {
-          if ( index >= indexs && index < 5) {
-            return element;
-          }
-        })
+      let img = data[1];
+      // Variables globales
+      const dat = [],
+        imgs = [];
+
+      if (indexs > 0 && indexs < 2) {
+        // Function to filter information
+        for (let i = indexs; i <= 4; i++) {
+          dat.push(datas[i]);
+          imgs.push(img[i]);
+        }
+        console.log(dat);
+        this.shadowRoot.querySelector("#mg").src = imgs[0];
+        this.shadowRoot.querySelector(".dato h1").innerHTML =
+          dat[0].original_title;
+
       }
-      // Function to filter information
-      filterRange(datas, index);
+      if (indexs > 1 && indexs < 3) {
+        for (let i = indexs; i <= 5; i++) {
+          dat.push(datas[i]);
+          imgs.push(img[i]);
+        }
+        console.log(dat);
+        this.shadowRoot.querySelector("#mg").src = imgs[0];
+        this.shadowRoot.querySelector(".dato h1").innerHTML =
+          dat[0].original_title;
+      }
+      if (indexs > 2 && indexs < 4) {
+        for (let i = indexs; i <= 6; i++) {
+          dat.push(datas[i]);
+          imgs.push(img[i]);
+        }
+        console.log(dat);
+        this.shadowRoot.querySelector("#mg").src = imgs[0];
+        this.shadowRoot.querySelector(".dato h1").innerHTML =
+          dat[0].original_title;
+      }
+    
+        
+
+  
     }
 
     connectedCallback() {

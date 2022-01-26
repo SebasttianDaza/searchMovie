@@ -149,7 +149,10 @@ async function showUserData(data) {
                   </div>
                 </div>
     `;
-  await result.insertAdjacentHTML("afterbegin", userContent);
+
+  
+  result.innerHTML = userContent;
+
   // Guardar datos en local
   await setTemplate(userContent);
 }
