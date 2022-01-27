@@ -34,50 +34,65 @@ class RequestResult extends HTMLElement {
       document.getElementById("resultado").innerHTML = template;
     }
 
-    
+    filterAutomatic(img, datas, indexs, value) {
+      const dataFilter = [], imgFilter = [];
+
+      for (let i = indexs; i <= value; i++) {
+        dataFilter.push(datas[i]);
+        imgFilter.push(img[i]);
+      }
+
+      return [dataFilter, imgFilter];
+    }
+
+    paintDate(datafilter, imgfilter) {
+      this.shadowRoot.querySelector("#mg").src = imgfilter[0];
+      this.shadowRoot.querySelector(".imagineH").innerHTML = datafilter[0].original_title;
+      this.shadowRoot.querySelector(".dato h1").innerHTML =
+        datafilter[0].original_title;
+      this.shadowRoot.querySelector(".dato p").innerHTML = datafilter[0].overview;
+      this.shadowRoot.querySelector(".dato .fech").innerHTML = datafilter[0].release_date;
+      this.shadowRoot.querySelector(".dato .raiting").innerHTML = datafilter[0].vote_average;
+      this.shadowRoot.querySelector(".modific1 img").src = imgfilter[1];
+      this.shadowRoot.querySelector(".modific1 h3").innerHTML = datafilter[1].original_title;
+
+      this.shadowRoot.querySelector(".modific2 img").src = imgfilter[2];
+      this.shadowRoot.querySelector(".modific2 h3").innerHTML = datafilter[2].original_title;
+
+      this.shadowRoot.querySelector(".modific3 img").src = imgfilter[3];
+      this.shadowRoot.querySelector(".modific3 h3").innerHTML =datafilter[3].original_title;
+
+    }
+
     changeIndex (indexs, data) {
       let datas = data[0];
       let img = data[1];
       // Variables globales
-      const dat = [],
-        imgs = [];
 
       if (indexs > 0 && indexs < 2) {
         // Function to filter information
-        for (let i = indexs; i <= 4; i++) {
-          dat.push(datas[i]);
-          imgs.push(img[i]);
-        }
-        console.log(dat);
-        this.shadowRoot.querySelector("#mg").src = imgs[0];
-        this.shadowRoot.querySelector(".dato h1").innerHTML =
-          dat[0].original_title;
-
+        const [datafilter, imgfilter] = this.filterAutomatic(img, datas, indexs, 4);
+        this.paintDate(datafilter, imgfilter);
       }
       if (indexs > 1 && indexs < 3) {
-        for (let i = indexs; i <= 5; i++) {
-          dat.push(datas[i]);
-          imgs.push(img[i]);
-        }
-        console.log(dat);
-        this.shadowRoot.querySelector("#mg").src = imgs[0];
-        this.shadowRoot.querySelector(".dato h1").innerHTML =
-          dat[0].original_title;
+        const [datafilter, imgfilter] = this.filterAutomatic(
+          img,
+          datas,
+          indexs,
+          5
+        );
+        this.paintDate(datafilter, imgfilter);
       }
       if (indexs > 2 && indexs < 4) {
-        for (let i = indexs; i <= 6; i++) {
-          dat.push(datas[i]);
-          imgs.push(img[i]);
-        }
-        console.log(dat);
-        this.shadowRoot.querySelector("#mg").src = imgs[0];
-        this.shadowRoot.querySelector(".dato h1").innerHTML =
-          dat[0].original_title;
-      }
+        const [datafilter, imgfilter] = this.filterAutomatic(
+          img,
+          datas,
+          indexs,
+          6
+        );
+        this.paintDate(datafilter, imgfilter);
+      } 
     
-        
-
-  
     }
 
     connectedCallback() {
