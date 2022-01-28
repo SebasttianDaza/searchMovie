@@ -167,7 +167,7 @@ header {
     align-items: center;
     justify-items: center;
     grid-gap: 2rem;
-    max-width: 100%;
+    width: 90%;
     margin: 2rem;
     height: auto;
 }
@@ -180,23 +180,50 @@ header {
     grid-gap: 2rem;
     justify-items: center;
     align-items: center;
+    width: 100%;
 }
 /* Image */
 
 .image {
-    display: flex;
-    justify-content: center;
-    height: 20rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(https://www.clarin.com/img/2021/11/09/spider-man-no-way-home___F4niY92zZ_720x0__1.jpg);
+    height: 22rem;
+    width: 220px;
+    border-radius: .2rem;
 }
 
-.image img {
-    position: relative;
-    max-width: 100%;
-    height: auto;
-    border-radius: .5rem;
-    box-shadow: .5rem .6rem .5rem  #100e1d83;
-    cursor: pointer;
-    
+#info {
+    position: absolute;
+    overflow: hidden;
+    width: 220px;
+    height: 20.5rem;
+    background-color: rgba(31, 31, 31, 0.658);
+    opacity: 0;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 700ms;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+    0 2px 2px rgba(0, 0, 0, 0.1),
+    0 4px 4px rgba(0, 0, 0, 0.1),
+    0 8px 8px rgba(0, 0, 0, 0.1),
+    0 16px 16px rgba(0, 0, 0, 0.1);
+    border-radius: .2rem;
+}
+
+.image:hover #info {
+    opacity: 1;
+}
+
+#headline {
+    color: #fff;
+    position: absolute;
+    font-size: 1rem;
+    margin-left: -75px;
+    margin-top: 15px;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 700ms;
+}
+
+.image:hover #headline {
+    margin-left: 80px;
 }
 
 /* Data */

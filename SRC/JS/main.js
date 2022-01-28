@@ -111,10 +111,11 @@ function getPosterPath(movie) {
 async function showUserData(data) {
   let userContent = `
       <section class="container">
-        <div class="image">
-                    <img src="${data.imgData[0]}">
-                    <h3 class='haver'>${data.results[0].title}</h3>
-                </div>
+        <div class="image" style="background-image: url(${data.imgData[0]});">
+           <div id="info">
+               <p id="headline">${data.results[0].original_title}</p>
+            </div>
+        </div>
 
                 <div class="data">
                     <h1>${data.results[0].original_title}</h1>
