@@ -1,3 +1,7 @@
+import { changeLight } from "./theme.js"; //Funcion para cargar theme
+import { setTemplate, changeApiLocalStorage } from "./localStorage.js";
+import { getPosterPath } from "./ciclos.js";
+
 //*Obtener todos los elementos de la pagina
 /**
  * @param {form} formulario Obtenmos el formulario de busquedad
@@ -9,7 +13,7 @@
 const form = document.getElementById("forma");
 const search = document.getElementById("Search");
 const btn = document.getElementById("btn");
-const result = document.getElementById("resultado");
+export const result = document.getElementById("resultado");
 
 // Delegacion of events
 
@@ -20,7 +24,6 @@ document.addEventListener("click", (e) => {
     e.preventDefault();
     const movie = search.value;
     getUserData(movie);
-    search.value = "";
   }
   // Event of the icon dark or light
   if( e.target.matches("#icon")){
@@ -31,17 +34,6 @@ document.addEventListener("click", (e) => {
     newRequest(e);
   }
 })
-
-
-//*Agregamos el evento al elemento
-
-/*btn.addEventListener("click", (evt) => {
-  evt.preventDefault();
-  const movie = search.value;
-
-  getUserData(movie);
-  search.value = "";
-});*/
 
 //*Obtener info de API
 
@@ -58,6 +50,7 @@ const API_KEY =
  */
 
 let dat;
+export let contableChangeLocalStorage;
 
 async function getUserData(movie) {
   try {
@@ -82,28 +75,14 @@ async function getUserData(movie) {
       .then(() => {
         //*Convertir datos Object a Array
         const valor = Object.values(dat);
-        //*Poder manteener los datos en una variable ||| Aqui quedamos con los datos de la API
-        changeApi(valor);
-        va++;
+    
+        changeApiLocalStorage(valor);
+        contableChangeLocalStorage++;
       });
 
-    //*Console para mostrar info
-    console.info("Estamos procesando los datos de la API");
   } catch (error) {
     showError(error.message);
   }
-}
-
-//*Obetener Poster Path dinamicamente
-
-function getPosterPath(movie) {
-  const arrPoster = [];
-  const imgKey = "https://image.tmdb.org/t/p/w500/";
-  for (let i = 0; i < movie.length; i++) {
-    arrPoster.push(imgKey + movie[i].poster_path);
-  }
-
-  return arrPoster;
 }
 
 //*function para modificar HTML
@@ -150,17 +129,10 @@ async function showUserData(data) {
                   </div>
                 </div>
     `;
-
-  
   result.innerHTML = userContent;
 
   // Guardar datos en local
   await setTemplate(userContent);
-}
-
-function setTemplate(data) {
-  localStorage.setItem("template", JSON.stringify(data));
-  // Eliminar si hay datos, cada 1000 segundos
 }
 
 //*Funcion de Errores
@@ -170,19 +142,6 @@ function showError(error) {
   console.error("Encontramos un error: ", error);
 }
 
-//Guardar datos en localStorage
-let va;
 
-async function changeApi(data) {
-  await validacion(va);
-  localStorage.setItem("data", JSON.stringify(data));
-}
 
-//* Funcion para validar los datos
-
-const validacion = (va) => {
-  if(va > 0){
-    localStorage.clear();
-  }
-}
 
