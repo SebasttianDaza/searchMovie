@@ -1,4 +1,5 @@
-import { result, contableChangeLocalStorage } from "./main.js";
+import { result } from "./main.js";
+import { contableChangeLocalStorage } from "./api.js";
 
 // Get all template for guard localStorage
 
