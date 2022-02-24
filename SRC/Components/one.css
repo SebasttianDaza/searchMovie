@@ -11,7 +11,7 @@
 
 #nuevo {
     display: grid;
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr;
     margin: 1rem;
 }
 
@@ -22,7 +22,7 @@
     justify-content: center;
     /* Efectos */
     align-items: center;
-    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 30%,#00DDEB);
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 30%, #00DDEB);
     border: 0;
     border-radius: .4rem;
     box-shadow: rgb(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -42,7 +42,8 @@
     transition: all .3s;
 }
 
-.text1:active, text1:hover {
+.text1:active,
+text1:hover {
     outline: 0;
 }
 
@@ -66,7 +67,7 @@
 /* Contenedor Principal */
 #sar {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     width: 100%;
     grid-gap: 3rem 3rem;
 }
@@ -85,11 +86,11 @@
     max-width: 100%;
     height: auto;
     border-radius: .5rem;
-    box-shadow: .5rem .6rem .5rem  #100e1d83;
+    box-shadow: .5rem .6rem .5rem #100e1d83;
     cursor: pointer;
 }
 
-.imagineH { 
+.imagineH {
     display: flex;
     align-items: center;
     position: absolute;
@@ -159,9 +160,10 @@
 
 .component {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 15rem));
     justify-items: center;
     align-items: center;
+    width: 100%;
 }
 
 .component div img {
@@ -170,12 +172,12 @@
     max-width: 100%;
     height: auto;
     border-radius: .5rem;
-    box-shadow: .5rem .6rem .5rem  #100e1d83;
+    box-shadow: .5rem .6rem .5rem #100e1d83;
     cursor: pointer;
 }
 
 
-.expe { 
+.expe {
     position: absolute;
     color: rgba(238, 228, 220, 0.877);
     font-size: 1.5rem;
@@ -194,4 +196,10 @@
     opacity: 2;
     cursor: pointer;
 
+}
+
+@media screen and (max-width: 900px) {
+    .component {
+        grid-gap: 2rem;
+    }
 }
