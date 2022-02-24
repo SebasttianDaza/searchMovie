@@ -1,18 +1,15 @@
 /* Nuevo Boton */
 /* Elemento Definido */
-:defined {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    grid-column: 3rem;
-    width: 100%;
-
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 #nuevo {
     display: grid;
     grid-template-columns: 1fr;
     margin: 1rem;
+    justify-items: center;
 }
 
 #nuevo .text1 {
@@ -125,9 +122,13 @@ text1:hover {
     height: auto;
     border: .1rem solid #100e1dd2;
     border-radius: .5rem;
+    overflow: hidden;
 }
 
 .dato h1 {
+    text-align: center;
+}
+.dato p {
     text-align: center;
 }
 
@@ -140,11 +141,14 @@ text1:hover {
     width: 80%;
     border-radius: .5rem;
     height: auto;
+    list-style: none;
 }
 
 .data ul li {
     text-align: center;
+    
 }
+
 
 /* Otros resultados titulo */
 
@@ -166,7 +170,14 @@ text1:hover {
     width: 100%;
 }
 
-.component div img {
+.modific {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+}
+
+.modific img {
     position: relative;
     width: 13rem;
     max-width: 100%;

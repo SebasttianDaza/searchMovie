@@ -50,7 +50,7 @@ class RequestResult extends HTMLElement {
       this.shadowRoot.querySelector(".imagineH").innerHTML = datafilter[0].original_title;
       this.shadowRoot.querySelector(".dato h1").innerHTML =
         datafilter[0].original_title;
-      this.shadowRoot.querySelector(".dato p").innerHTML = datafilter[0].overview;
+      this.shadowRoot.querySelector(".dato p").innerHTML = (datafilter[0].overview).slice(0, 200);
       this.shadowRoot.querySelector(".dato .fech").innerHTML = datafilter[0].release_date;
       this.shadowRoot.querySelector(".dato .raiting").innerHTML = datafilter[0].vote_average;
       this.shadowRoot.querySelector(".modific1 img").src = imgfilter[1];

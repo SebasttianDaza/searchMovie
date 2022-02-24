@@ -17,6 +17,10 @@ body {
     margin: 0 auto;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 /* Contenedor principal header */
 header {
@@ -67,7 +71,7 @@ header {
     border-radius: 10px;
 }
 
-#forma {
+#formContent {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 2rem;
@@ -111,7 +115,7 @@ header {
     text-align: center;
 }
 
-#forma button {
+.button {
     max-width: 100%;
     width: 10rem;
     height: 2.5rem;
@@ -139,7 +143,7 @@ header {
     transition: all .3s;
 }
 
-#forma button:active, #forma button:hover {
+.button:active, .button:hover {
     outline: 0;
 }
 
